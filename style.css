@@ -93,6 +93,30 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+  .text-ar {
+    font-size: 2.5rem;
+  }
+  .text-en {
+    font-size: 1.3rem;
+    letter-spacing: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-ar {
+    font-size: 2rem;
+  }
+  .text-en {
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+  }
+}
+
 .loading-icon-wrapper {
   margin-top: 1.5rem;
   display: flex;
@@ -320,7 +344,7 @@ body {
 }
 
 .header-container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0.8rem 2rem;
   display: flex;
