@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg-main: #3a3a3a;
   --bg-footer: #252525;
@@ -297,3 +301,125 @@ body {
     transform: translateY(0);
   }
 }
+
+/* ==========================================
+   الترويسة الرئيسية للموقع (Header)
+   ========================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(37, 37, 37, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.header-logo img {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.header-logo:hover {
+  transform: scale(1.03);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: var(--transition);
+  position: relative;
+  padding: 0.2rem 0;
+}
+
+.header-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--brand-green);
+  transition: var(--transition);
+}
+
+.header-link:hover {
+  color: var(--text-primary);
+}
+
+.header-link:hover::after {
+  width: 100%;
+}
+
+.header-cta {
+  background: linear-gradient(135deg, var(--brand-green), #009040);
+  color: #ffffff;
+  padding: 0.5rem 1.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 176, 80, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: inline-block;
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 176, 80, 0.45);
+  color: #ffffff;
+}
+
+.header-cta:active {
+  transform: translateY(0);
+}
+
+/* التجاوب للهواتف والشاشات الصغيرة للترويسة */
+@media (max-width: 768px) {
+  .header-link {
+    display: none;
+  }
+  .header-nav {
+    gap: 1rem;
+  }
+  .header-container {
+    padding: 0.8rem 1.5rem;
+  }
+  .header-logo img {
+    height: 36px;
+  }
+  .header-cta {
+    padding: 0.45rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
