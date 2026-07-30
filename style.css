@@ -50,6 +50,7 @@ body {
   width: 90%;
   height: auto;
   display: block;
+  margin-right: 80px; /* يدفع الشعار لليسار بشكل أكبر */
   opacity: 0;
   animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
